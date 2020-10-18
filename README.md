@@ -12,6 +12,7 @@ source ~/venv/arrow/bin/activate
 Now that our virtual environment is setup, we can add the plugin without affecting our server.
 
 pip3 install arrow
+
 import arrow
 
 Our virtual environment is now setup.
