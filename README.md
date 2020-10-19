@@ -41,6 +41,6 @@ current = arrow.now('US/Pacific')
 
 current.format('hh:mm:ss')
 
-You have now successfully displayed the date or time for 3 different situations. Hopefully you have enjoyed the process. There are very many different and useful formats for Arrow that have not been explored in the demo. These can be explored at https://arrow.readthedocs.io/en/stable/
+You have now successfully displayed the date or time for 3 different situations. Hopefully you have enjoyed the process. There are very many different and useful formats for Arrow that have not been explored in the demo. These can be found at https://arrow.readthedocs.io/en/stable/
 
-Don't forget to quit pythond with "quit()" and end your virtual environment with "deactivate"
+Don't forget to quit python with "quit()" and end your virtual environment with "deactivate"
