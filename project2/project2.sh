@@ -14,7 +14,7 @@ if [ ${diskUse%?} -lt ${alertUse%?} ]
 then
         mailBody="Disk space on $server is OK. Your disk is at ${diskUse} capacity."
         mail -s "Disk Space OK" $emailaddress <<< $(echo -e $mailBody)
-#if disk use is 75% or above, an emial is sent with a warning
+#if disk use is 75% or above, an email is sent with a warning
 else
         mailBody="Disk space on $server is near max. Your disk is at ${diskUse} capacity."
         mail -s "Disk Space Alert!" $emailaddress <<< $(echo -e $mailBody)
