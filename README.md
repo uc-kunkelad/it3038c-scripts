@@ -2,12 +2,17 @@
 
 # Project 2
 
-This bash script will read the hard drive space used on your CentOS computer and send you an Email giving the value. I'll break down the commands below.
+This bash script will read the hard drive space used on your CentOS computer and send you an Email giving the value.
 
-```bash
-This is the bash portion
-```
+This script could be located in any directory.
 
+The variables diskUse, alertUse and server can stay the same on your computer. You will have to change emailAddress to your own.
+
+diskUse starts with the disk free (df) command and pipes it through grep and awk to print out the percentage of disk space used on root. alertUse is a percentage of your choice. 75% may be a bit low for a disk space warning depending on your needs. server simply returns the hostname.
+
+This is a simple if then else statement that determines whether the amount of space used is less that (-lt) the amount of space necessary to trigger an alert. It will sent you an Email in both cases, but the subject and body will change based on whether the message is informational or a warning.
+
+Once you have changed the variables to fit your needs, the script should run without having to alter anything.
 
 
 # Python Arrow
