@@ -1,29 +1,25 @@
 #!/bin/bash
 
+#calculates disk free space
 diskUse=$(df -h | grep '/dev/mapper/centos-root' | awk {'print $5'})
-
-echo $diskUse
-
+#variable to set disk usage alert percentage
 alertUse=75%
+#retrieves server hostname
+server=$HOSTNAME
+#enter your email below
+emailaddress=kunkelad@ucmail.uc.edu
 
-echo $alertUse
-
-#if [${diskUse%?} -ge ${alertUse%?}]; then
-#	mailbody="Disk space near max. Your disk is at ${diskUse}."
-#	echo "sending mail..."
-#	echo ${mailbody} | mail -s "Disk Space Alert!" "kunkelad@ucmail.uc.edu"
-#elif [${diskUse%?} -lt ${alertUse%?}]; then
-#	echo "Disk is at ${diskUse}." > /dev/null
-#fi
-
-#if $diskUse < $alertUse
-#then
-#	echo "Disk use is fine"
-#else echo "You're in trouble"
-#fi
-
-if (${diskUse} < ${alertUse})
+#if disk use is below 75%, an email is sent without warning
+if [ ${diskUse%?} -lt ${alertUse%?} ]
 then
-	echo $diskUse
-else	echo $diskAlert
+        echo $diskUse
+        mailBody="Disk space on $server is OK. Your disk is at ${diskUse}."
+        echo "sending mail..."
+        mail -s "Disk Space OK" $emailaddress <<< $(echo -e $mailBody)
+#if disk use is 75% or above, an emial is sent with a warning
+else
+        echo $diskUse
+        mailBody="Disk space on $server is near max. Your disk is at ${diskUse}."
+        echo "sending mail..."
+        mail -s "Disk Space Alert!" $emailaddress <<< $(echo -e $mailBody)
 fi
