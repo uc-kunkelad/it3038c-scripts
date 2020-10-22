@@ -12,14 +12,10 @@ emailaddress=kunkelad@ucmail.uc.edu
 #if disk use is below 75%, an email is sent without warning
 if [ ${diskUse%?} -lt ${alertUse%?} ]
 then
-        echo $diskUse
-        mailBody="Disk space on $server is OK. Your disk is at ${diskUse}."
-        echo "sending mail..."
+        mailBody="Disk space on $server is OK. Your disk is at ${diskUse} capacity."
         mail -s "Disk Space OK" $emailaddress <<< $(echo -e $mailBody)
 #if disk use is 75% or above, an emial is sent with a warning
 else
-        echo $diskUse
-        mailBody="Disk space on $server is near max. Your disk is at ${diskUse}."
-        echo "sending mail..."
+        mailBody="Disk space on $server is near max. Your disk is at ${diskUse} capacity."
         mail -s "Disk Space Alert!" $emailaddress <<< $(echo -e $mailBody)
 fi
