@@ -1,4 +1,24 @@
 # it3038c-scripts
+
+# Project 2
+
+This bash script will read the hard drive space used on your CentOS computer and send you an Email giving the value. I'll break down the commands below.
+
+```bash
+This is the bash portion
+```
+
+
+
+
+
+
+
+
+
+
+
+
 # Python Arrow
 
 The following documentation represents 3 of many uses for the Arrow plugin for Python. Arrow is used to format time and date information which can be so tedious within many programming languages. This will be done in a virtual environment. Start by creating the virtual environment with the commands below.
