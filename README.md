@@ -1,5 +1,26 @@
 # it3038c-scripts
 
+# Project 3
+
+This bash script will run several commands on your CentOS computer and send you an Email with the results of those commands. The base script provides information on disk space usage, with the addition of average cpu usage, logged in users, statuses of several services, and any disk errors.
+
+Please keep in mind that the disk check takes a few minutes to run.
+
+This script can be run from anywhere on your CentOS computer.
+
+Please ensure after you have downloaded the script, you have permission to execute it with chmod.
+
+You will need to change the emailAddress variable to reflect your own Email. There may be other modifications necessary such as the disk name in the diskUse variable, and the check variable.
+
+Any services can be added by creating a variable and following the same process as the other services. Remember to add that variable to the body of the Email as well.
+
+To execute the script, use the following command while in the script's directory:
+
+```bash
+./project3.sh
+```
+
+
 # Project 2
 
 This bash script will read the hard drive space used on your CentOS computer and send you an Email giving the value.
